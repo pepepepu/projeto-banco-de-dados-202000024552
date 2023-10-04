@@ -1,0 +1,166 @@
+@import '../abstract/variaveis';
+@import '../abstract/functions';
+
+.principal-01 {
+    background-color: $white;
+    overflow: auto;
+
+    .bloco-01 {
+        @include estilo-secao;
+        flex-direction: column;
+        gap: 20px;
+
+        .bloco-01_textos {
+            .bloco-01_titulo {
+                @include estilo-fonte(90px, $fonte-titulo, 400);
+                text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    
+                .destaque_t1 {
+                    color: $green;
+                }
+    
+                .destaque_t2 {
+                    color: $pink;
+                }
+    
+                .destaque_t3 {
+                    color: $blue;
+                }
+    
+                .destaque_t4 {
+                    color: $yellow;
+                }
+            }
+
+            .bloco-01_subtitulo {
+                @include estilo-fonte(15px, $fonte-conteudo, 300);
+                padding: 0.2rem;
+    
+                .destaque_st1 {
+                    font-weight: 800;
+                    @include estilo-gradiente($gradiente-01);
+                }
+            }
+        }
+
+        .bloco-01_botao {
+            padding: 1rem;
+            @include estilo-fonte(16px, $fonte-conteudo, 800);
+            @include estilo-botao;
+
+            .bloco-01_botao_txt {
+                @include estilo-fonte (15px, $fonte-conteudo, 400);
+            }
+        }
+
+        .bloco-01_botao:hover {
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .bloco-03 {
+        @include estilo-secao;
+
+        .bloco-03_titulo {
+            @include estilo-fonte(35px, $fonte-conteudo, 400);
+            width: 80%;
+            padding: 1rem 1rem 0.5rem 1rem;
+
+            .titulo_destaque {
+                @include estilo-gradiente($gradiente-01);
+                text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        .bloco-03_botoes {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding: 1rem;
+            gap: 20px;
+
+            .botao01 {
+                @include estilo-botao;
+                color: $black;
+                background-color: $green;   
+            }
+
+            .botao02 {
+                @include estilo-botao;
+                color: $black;
+                background-color: $pink;
+            }
+            
+            .botao03 {
+                @include estilo-botao;
+                color: $white;
+                background-color: $blue;
+            }
+        }
+
+        .botao01:hover {
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .botao02:hover {
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .botao03:hover {
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .bloco-03_info {
+            @include estilo-fonte(10px, $fonte-conteudo, 400);
+            padding: 0.5rem;
+
+            .info_destaque {
+                font-weight: 800;
+                color: $green;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .principal-01 {
+        .bloco-01 {
+            .bloco-01_textos {
+                .bloco-01_titulo {
+                    @include estilo-fonte(50px, $fonte-titulo, 400);
+                }
+
+                .bloco-01_subtitulo {
+                    @include estilo-fonte(11px, $fonte-conteudo, 400);
+                }
+            }
+        }
+
+        .bloco-03 {
+            .bloco-03_titulo {
+                @include estilo-fonte(25px, $fonte-conteudo, 400);
+            }
+            .bloco-03_botoes {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 13px;
+
+                .botao01, .botao02, .botao03 {
+                    justify-content: center;
+                    width: 100%;
+                    height: 5vh;
+                    font-weight: 700;
+
+                    .botao-texto {
+                        font-size: 13px;
+                    }
+
+                    .botao-imagem {
+                        width: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,92 @@
+@import '../abstract/variaveis';
+@import '../abstract/functions';
+
+.principal_delete {
+    background-color: $white;
+    overflow: auto;
+    @include estilo-secao;
+    flex-direction: column;
+    gap: 20px;
+
+    .bloco_textos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+
+        .bloco_titulo {
+            padding: 0.3rem;
+            @include estilo-fonte(90px, $fonte-titulo, 400);
+            color: $pink;
+
+            .titulo_destaque2 {
+                color: $black;
+            }
+        }
+
+        .bloco_subtitulo {
+            @include estilo-fonte(15px, $fonte-conteudo, 300);
+            padding: 0.2rem;
+            width: 80%;
+    
+            .subtitulo_alt {
+                font-weight: 800;
+                color: $pink;
+            }
+        }
+    }
+
+    .bloco_tabelas {
+        color: $black;
+        background-color: $white;
+        padding: 5px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        border: 2px solid $white;
+        font-family: $fonte-conteudo;
+        font-size: 0.9rem;
+        width: 40%;
+        height: 4%;
+        border-radius: 20px;
+
+        .opcao {
+            padding: 0.5rem;
+        }
+    }
+
+    .bloco_tabelas:hover {
+        border: 2px solid $pink;
+    }
+
+    .bloco_tabelas:focus {
+        outline: none;
+        border-color: $pink;
+        box-shadow: 0 0 5px $pink(231, 76, 60, 0.7);
+    }
+
+    .campos {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+
+        align-items: center;
+        
+        .campo {
+            border-color: $pink;
+            color: $black;
+            width: 35%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid $white-gray;
+
+            font-family: $fonte-conteudo;
+            font-size: .8rem;
+        }
+    
+        .campo:focus {
+            outline: none;
+            border-color: $pink;
+            box-shadow: 0 0 5px $pink(231, 76, 60, 0.7);
+        }
+    }
+}

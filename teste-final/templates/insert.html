@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create.Q</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="icon" href="/static/assets/assets-icons/create-icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/assets/assets-icons/create-icon.png" type="image/x-icon">
+</head>
+<body>
+    <header class="cabecalho">
+        <a href="/main" title="Menu" class="material-symbols-rounded">
+            home
+        </a>
+        <div class="botoes_grupo">
+            <a href="/insert" title="Voltar" class="material-symbols-rounded">
+                arrow_back
+            </a>
+            <a href="/page1" title="Menu Crud" class="imagem-menu">
+                <img src="/static/assets/assets-icons/crud-icon.png" alt="Ícone de Crud" class="imagem">
+            </a>
+        </div>
+    </header>
+    <main class="principal_insert">
+        <div class="bloco_textos">
+            <h1 class="bloco_titulo">
+                c<strong class="titulo_destaque2">reate</strong>
+            </h1>
+            <p class="bloco_subtitulo">
+                Escolha a sua
+                <strong class="subtitulo_alt">
+                    ação
+                </strong>
+            </p>
+        </div>
+        <div class="bloco_opcoes">
+            <button class="botao-opcao">
+                Criar tabelas
+            </button>
+            <button class="botao-opcao">
+                Inserir informações
+            </button>
+        </div>
+        <div class="opcoes_criacao-tabelas" id="opcoes-criacao">
+            <div class="grupo-opcao">
+                <input type="checkbox" value="1" class="opcao-tabela" id="usuario">
+                <label for="usuario" class="opcao-label">Usuário</label>
+            </div>
+            <div class="grupo-opcao">
+                <input type="checkbox" value="2" class="opcao-tabela" id="musica">
+                <label for="musica" class="opcao-label">Música</label>
+            </div>
+            <div class="grupo-opcao">
+                <input type="checkbox" value="3" class="opcao-tabela" id="artista">
+                <label for="artista" class="opcao-label">Artista</label>
+            </div>
+            <div class="grupo-opcao">
+                <input type="checkbox" value="4" class="opcao-tabela" id="album">
+                <label for="album" class="opcao-label">Álbum</label>
+            </div>
+        </div>
+        <select id="tabelas" class="bloco_tabelas" name="tabelas">
+            <option class="opcao" value="0">Selecione uma tabela</option>
+            <option class="opcao" value="usuario">Usuário</option>
+            <option class="opcao" value="musica">Música</option>
+            <option class="opcao" value="artista">Artista</option>
+            <option class="opcao" value="album">Álbum</option>
+        </select>
+        <form action="/insert/inserir-dados" method="post" class="campos_usuario campos" id="formulario_inserir_usuario">
+            <input type="hidden" name="tabela" value="usuario">
+            <input type="text" name="nome_usuario" class="campo" placeholder="Nome do usuário">
+            <input type="text" name="email" class="campo" placeholder="E-mail">
+            <input type="text" name="senha" class="campo" placeholder="Senha">
+            <input type="text" name="whatsapp" class="campo" placeholder="WhatsApp">
+            <input type="text" name="twitter" class="campo" placeholder="Twitter">
+            <input type="text" name="instagram" class="campo" placeholder="Instagram">
+        </form>
+        <form action="/insert/inserir-dados" method="post" class="campos_musica campos" id="formulario_inserir_musica">
+            <input type="hidden" name="tabela" value="musica">
+            <input type="text" name="titulo_musica" class="campo" placeholder="Título da música">
+            <input type="text" name="nome_artista" class="campo" placeholder="Nome do Artista">
+            <input type="text" name="titulo_album" class="campo" placeholder="Título do Álbum">
+        </form>
+        <form action="/insert/inserir-dados" method="post" class="campos_artista campos" id="formulario_inserir_artista">
+            <input type="hidden" name="tabela" value="artista">
+            <input type="text" name="nome_artista1" class="campo" placeholder="Nome do Artista">
+            <input type="text" name="genero_musical" class="campo" placeholder="Gênero Musical">
+        </form>
+        <form action="/insert/inserir-dados" method="post" class="campos_album campos" id="formulario_inserir_album">
+            <input type="hidden" name="tabela" value="album">
+            <input type="text" name="titulo_album1" class="campo" placeholder="Título do Álbum">
+            <input type="text" name="nome_artista2" class="campo" placeholder="Nome do Artista">
+            <div class="data">
+                <label for="campo-data" class="data-label">
+                    Data
+                </label>
+                <input id="campo-data" name="data" type="date" class="campo_obrigatorio campo">
+            </div>
+        </form>
+        <button id="campo_botao-criar" class="campo_botao_enviar">Criar tabela(s)</button>
+        <button id="campo_botao-inserir" class="campo_botao_enviar">Inserir</button>
+    </main>
+    <footer class="rodape">
+        <p class="rodape_texto">
+                Desenvolvido por Pedro Paulo para a matéria de Banco de Dados 1
+        </p>
+        <div class="rodape_links">
+            <a href="https://github.com/pepepepu" class="rodape_link">
+                <img src="/static/assets/github-logo.png" alt="Ícone do GitHub" class="link-imagem">
+                <p class="link-label">
+                    GitHub
+                </p>
+            </a>
+            <a href="https://www.linkedin.com/in/pp-oliveira/" class="rodape_link">
+                <img src="/static/assets/linkedin-logo.png" alt="Ícone do Linkedin" class="link-imagem">
+                <p class="link-label">
+                    LinkedIn
+                </p>
+            </a>
+        </div>
+    </footer>
+    <script src="/static/javascript/insert.js"></script>
+</body>
+</html>

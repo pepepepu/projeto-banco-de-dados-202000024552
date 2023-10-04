@@ -1,0 +1,66 @@
+@import '../abstract/variaveis';
+@import '../abstract/functions';
+
+.principal_insert {
+    @include estilo-padrao($green);
+
+    .opcoes_criacao-tabelas {
+        @include estilo-opcoes-tabela;
+    }
+    .campos {
+        @include estilo-campo-padrao($green);
+    }
+}
+
+.principal_read {
+    @include estilo-padrao($yellow);
+
+    .campos {
+        @include estilo-campo-padrao($yellow);
+    }
+
+    .resultado {
+        @include estilo-tabela-consulta ($light-yellow);
+    }
+}
+
+.principal_update {
+    @include estilo-padrao($blue);
+
+    .campo {
+        border-color: $blue;
+        color: $black;
+        width: 10%;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid $white-gray;
+        font-family: $fonte-conteudo;
+        font-size: .8rem;
+    }
+
+    .campo:focus {
+        outline: none;
+        border-color: $blue;
+        box-shadow: 0 0 5px $blue(231, 76, 60, 0.7);
+    }
+
+    .campos {
+        @include estilo-campo-padrao($blue);
+    }
+
+    .resultado {
+        @include estilo-tabela-consulta ($light-blue);
+    }
+}
+
+.principal_delete {
+    @include estilo-padrao($pink);
+
+    .campos {
+        @include estilo-campo-padrao($yellow);
+    }
+
+    .resultado {
+        @include estilo-tabela-consulta ($light-pink);
+    }
+}

@@ -1,0 +1,331 @@
+@import '../abstract/variaveis';
+
+@mixin estilo-botao-gradiente {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 0.6rem 1rem;
+    border: 2px solid $white;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    color: $black;
+
+    .acao-texto {
+        font-family: $fonte-conteudo;
+        font-size: 16px;
+        font-weight: 800;
+        padding: 0.4rem;
+    }
+}
+
+@mixin estilo-tabelas {
+    color: $black;
+    background-color: $white;
+    padding: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid $white;
+    font-family: $fonte-conteudo;
+    font-size: 0.9rem;
+    width: 40%;
+    height: auto;
+    border-radius: 20px;
+
+    .opcao {
+        padding: 0.5rem;
+    }
+}
+
+@mixin estilo-botao {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+    .botao-imagem {
+        width: 24px;
+        height: auto;
+    }
+
+    .botao-texto {
+        font-family: $fonte-conteudo;
+        font-size: 10px;
+    }
+}
+
+@mixin estilo-secao {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
+}
+
+@mixin estilo-fonte ($tamanho, $familia, $peso) {
+    font-size: $tamanho;
+    font-family: $familia;
+    font-weight: $peso;
+}
+
+@mixin estilo-gradiente ($gradiente) {
+    background: $gradiente;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin estilo-card ($direcao, $altura, $largura, $justiicar, $alinhar) {
+    display: flex;
+    flex-direction: $direcao;
+    height: $altura;
+    width: $largura;
+
+    justify-content: $justiicar;
+    align-items: $alinhar;
+}
+
+@mixin estilo-icones ($cor, $padding, $tamanho, $i-fill, $i-peso, $i-grad, $i-opacidade) {
+    color: $cor;
+    padding: $padding;
+    font-size: $tamanho;
+    font-variation-settings:
+    'FILL' $i-fill,
+    'wght' $i-peso,
+    'GRAD' $i-grad,
+    'opsz' $i-opacidade;
+}
+
+@mixin estilo-caixa {
+    font-family: $fonte-conteudo;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    padding: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+@mixin estilo-padrao ($color){
+    background-color: $white;
+    @include estilo-secao;
+    flex-direction: column;
+    gap: 20px;
+
+    .bloco_textos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+
+        .bloco_titulo {
+            padding: 0.3rem;
+            @include estilo-fonte(90px, $fonte-titulo, 400);
+            color: $color;
+
+            .titulo_destaque2 {
+                color: $black;
+            }
+        }
+
+        .bloco_subtitulo {
+            @include estilo-fonte(15px, $fonte-conteudo, 300);
+            padding: 0.2rem;
+            width: 80%;
+    
+            .subtitulo_alt {
+                font-weight: 800;
+                color: $color;
+            }
+        }
+    }
+
+    .bloco_opcoes {
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        align-items: center;
+        gap: 10px;
+
+        .botao-opcao {
+            font-size: .8rem;
+            font-family: $fonte-conteudo;
+            font-weight: 800;
+            padding: .8rem;
+            border: 2px solid $white-gray;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .botao-opcao:hover {
+            border: 2px solid $black;
+            background-color: $color;
+        }
+    }
+
+    .bloco_tabelas {
+        @include estilo-tabelas;
+    }
+
+    .bloco_tabelas:hover {
+        border: 2px solid $color;
+    }
+
+    .bloco_tabelas:focus {
+        outline: none;
+        border-color: $color;
+        box-shadow: 0 0 5px $color(231, 76, 60, 0.7);
+    }
+
+    .campo_botao_enviar {
+        @include estilo-botao;
+        font-family: $fonte-conteudo;
+        font-size: 0.9rem;
+        border: 2px solid transparent;
+    }
+
+    .campo_botao_enviar:hover {
+        background-color: transparent;
+        border: 2px solid $color;
+    }
+}
+
+@mixin estilo-campo-padrao ($color){
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 35%;
+    align-items: center;
+
+    .campo {
+        border-color: $color;
+        color: $black;
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid $white-gray;
+        font-family: $fonte-conteudo;
+        font-size: .8rem;
+    }
+
+    .campo:focus {
+        outline: none;
+        border-color: $color;
+        box-shadow: 0 0 5px $color(231, 76, 60, 0.7);
+    }
+
+    .data {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 13px;
+
+        text-align: left;
+
+        .data-label {
+            font-family: $fonte-conteudo;
+            font-size: .8em;
+            text-align: left;
+        }
+
+        .campo[type="date"] {
+            width: 100%;
+        }
+    }
+}
+
+@mixin estilo-opcoes-tabela {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 50%;
+    gap: 15px;
+
+    .grupo-opcao {
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 3px;
+        cursor: pointer;
+
+        .opcao-label {
+            font-size: .9em;
+            font-family: $fonte-conteudo;
+        }
+    }
+}
+
+@mixin estilo-tabela-consulta ($color) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 80%;
+
+    .minha-tabela-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        font-family: $fonte-conteudo;
+        font-size: .9em;
+        color: $black;
+        padding: .8rem;
+        background-color: $color;
+        border-radius: 10px;
+
+        .minha-tabela {
+            padding: 0 5%;
+            border-radius: 40px;
+            border-collapse: collapse;
+            width: 90%;
+            border: 1px solid $black;
+        }
+    
+        .minha-celula {
+            font-size: .8em;
+            font-family: $fonte-conteudo;
+            border: 1px solid $black;
+            padding: 8px;
+            text-align: center;
+        }
+    
+        .minha-celula-header {
+            font-size: .8em;
+            font-family: $fonte-conteudo;
+            border: 1px solid $black;
+            padding: 8px;
+            text-align: center;
+            background-color: $color;
+        }
+    
+        .minha-linha:nth-child(even) {
+            background-color: $lil-white;
+        }
+    }
+}

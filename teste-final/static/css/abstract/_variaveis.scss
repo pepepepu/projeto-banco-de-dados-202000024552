@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Righteous&display=swap');
+
+//Fontes
+$fonte-titulo: 'Righteous', cursive;
+$fonte-conteudo: 'Comfortaa', sans-serif;
+
+//Spotify
+$green: #1DB954;
+$light-green: #48f283;
+$black: #191414;
+$white: #FFFFFF;
+$lil-white: #e6e3e3;
+
+//Apple Music
+$pink: #FC3C44;
+$light-pink: #F94C57;
+$white-gray: #C2CAD7;
+
+//Amazon Music
+$blue: #0077C1;
+$light-blue: #0DBFF5;
+
+//Cores secundárias
+$yellow: #F39B36;
+$light-yellow: #FCC76C;
+
+$orange: #FD663F;
+$light-orange: #FFB3A1;
+
+//Gradientes
+$gradiente-01: linear-gradient(90deg, #1DB954, #FC3C44, #0077C1, #F39B36);
+$gradiente-02: linear-gradient(90deg, #1DB954, #FC3C44, #0077C1);
+$gradiente-pink: radial-gradient(circle, rgba(139,40,44,1) 0%, rgba(252,60,68,1) 100%);

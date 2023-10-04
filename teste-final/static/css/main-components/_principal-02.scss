@@ -1,0 +1,125 @@
+@import '../abstract/variaveis';
+@import '../abstract/functions';
+
+.principal-02 {
+    background-color: $white;
+    overflow: auto;
+
+    .bloco01 {
+        @include estilo-secao;
+        flex-direction: column;
+        gap: 20px;
+
+        .bloco01-textos {
+            .bloco-01_titulo {
+                @include estilo-fonte(90px, $fonte-titulo, 400);
+                text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    
+                .titulo-d01 {
+                    color: $green;
+                }
+    
+                .titulo-d02 {
+                    color: $yellow
+                }
+    
+                .titulo-d03 {
+                    color: $blue;
+                }
+    
+                .titulo-d04 {
+                    color: $pink;
+                }
+            }
+
+            .bloco-01_subtitulo {
+                @include estilo-fonte(15px, $fonte-conteudo, 300);
+                padding: 0.2rem;
+    
+                .subtitulo_alt {
+                    font-weight: 800;
+                    @include estilo-gradiente($gradiente-01);
+                }
+            }
+
+        }
+        .bloco-01_acoes {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+
+            .acao1{
+                @include estilo-botao-gradiente;
+                background-color: $white;
+            }
+
+            .acao1:hover {
+                border: 2px solid $green;
+                background-color: transparent;
+                color: $green;
+            }
+
+            .acao2{
+                @include estilo-botao-gradiente;
+                background-color: $white;
+            }
+
+            .acao2:hover {
+                border: 2px solid $yellow;
+                background-color: transparent;
+                color: $yellow;
+            }
+
+            .acao3{
+                @include estilo-botao-gradiente;
+                background-color: $white;
+            }
+
+            .acao3:hover {
+                border: 2px solid $blue;
+                background-color: transparent;
+                color: $blue;
+            }
+
+            .acao4{
+                @include estilo-botao-gradiente;
+                background-color: $white;
+            }
+
+            .acao4:hover {
+                border: 2px solid $pink;
+                background-color: transparent;
+                color: $pink;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .principal-02 {
+        .bloco01 {
+            justify-content: center;
+            .bloco01-textos {
+                .bloco-01_titulo {
+                    @include estilo-fonte(80px, $fonte-titulo, 400);
+                }
+    
+                .bloco-01_subtitulo {
+                    @include estilo-fonte(12px, $fonte-conteudo, 300);
+                }
+            }
+    
+            .bloco-01_acoes {
+                flex-direction: column;
+                gap: 10px;
+                justify-content: center;
+    
+                .acao1, .acao2, .acao3, .acao4 {
+                    justify-content: center;
+                    width: 85%;
+                    height: 4vh;
+                }
+            }
+        }
+    }
+}

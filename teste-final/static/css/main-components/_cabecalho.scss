@@ -1,0 +1,48 @@
+@import '../abstract/variaveis';
+@import '../abstract/functions';
+
+.cabecalho {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    background-color: $white;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+    .botoes_grupo {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .imagem-menu {
+        padding: 1rem 1.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .imagem {
+            cursor: pointer;
+            width: 2rem;
+        }
+    }
+
+    .material-symbols-rounded {
+        @include estilo-icones ($black, 1rem 1.5rem, 2.5rem, 1, 500, 0, 24);
+        text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.07);
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        text-decoration: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cabecalho {
+        .material-symbols-rounded {
+            @include estilo-icones ($black, 1rem 1rem, 2rem, 1, 500, 0, 24);
+        }
+    }
+}
